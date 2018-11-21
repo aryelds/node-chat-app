@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,5 +7,17 @@
 </head>
 <body>
     <p>Welcome to the chat app</p>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+       let socket = io();
+
+       socket.on('connect', () => {
+           console.log('Connect to server2');
+       });
+
+       socket.on('disconnect', () => {
+           console.log('Disconnected from server');
+       });
+    </script>
 </body>
 </html>
